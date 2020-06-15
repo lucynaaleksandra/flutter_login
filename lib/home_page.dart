@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-// import './form.dart';
+// import 'package:flutter/scheduler.dart';
+import './raised_button.dart';
+import './email_input.dart';
+import './password_input.dart';
+import './heading.dart';
+import './checkbox.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,9 +22,20 @@ class _HomePageState extends State<HomePage> {
       // ),
 
       home: Scaffold(
-        backgroundColor: Color(0xFFd0f2eb),
+        backgroundColor: Color(0xFFFFFFFF),
+        // border: OutlinedBorder(),
+        // borderSide: BorderSide(color: Colors.white),
         body: new Center(
           child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+              border: Border(
+                left: BorderSide(color: Colors.blue[400], width: 2.0),
+                top: BorderSide(color: Colors.blue[400], width: 2.0),
+                right: BorderSide(color: Colors.blue[400], width: 2.0),
+                bottom: BorderSide(color: Colors.blue[400], width: 2.0),
+              ),
+            ),
             // padding: const EdgeInsets.symmetric(
             //   horizontal: 60,
             // ),
@@ -28,14 +44,6 @@ class _HomePageState extends State<HomePage> {
               vertical: 60,
             ),
             width: 500,
-            // decoration: BoxDecoration(
-            //   border: Border(
-            //     top: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-            //     left: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-            //     right: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-            //     bottom: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-            //   ),
-            // ),
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -45,67 +53,28 @@ class _HomePageState extends State<HomePage> {
                     vertical: 50,
                   ),
                   decoration: BoxDecoration(
-                    border: Border(
-                      top: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-                      left: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-                      right: BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-                      bottom:
-                          BorderSide(width: 2.0, color: Color(0xFFFFFFFFFF)),
-                    ),
-                  ),
+                      // color: Color(0xFFd0f2eb),
+                      // color: Color(0xFFF0F0F0),
+                      ),
                   child: new Column(
                     children: [
-                      Text(
-                        'Login App',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30.0,
-                          fontFamily: 'Roboto',
-                          letterSpacing: 2,
-                          color: Colors.teal,
-                        ),
-                      ),
+                      Heading(),
                       SizedBox(height: 50),
-                      // MyForm(),
-                      new TextField(
-                        decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          hintText: 'Enter a search term',
-                          helperText: 'This is helper text',
-                          errorText: 'This is not a valid entry',
-                        ),
-                      ),
+                      EmailInput(),
                       SizedBox(height: 20),
-                      new TextField(
-                        autocorrect: true,
-                        decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          hintText: 'Enter Some Text Here',
-                          helperText: 'This is helper text',
+                      PasswordInput(),
+                      FormCheckbox(),
+                      Text(
+                        'Forgot your password?',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16.0,
+                          fontFamily: 'Roboto',
+                          color: Colors.grey[600],
                         ),
                       ),
                       SizedBox(height: 50),
-                      new Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          new RaisedButton(
-                            padding: const EdgeInsets.all(8.0),
-                            textColor: Colors.white,
-                            color: Colors.teal,
-                            onPressed: null,
-                            child: new Text("Sign Up"),
-                          ),
-                          new RaisedButton(
-                            onPressed: null,
-                            textColor: Colors.white,
-                            color: Colors.teal,
-                            padding: const EdgeInsets.all(8.0),
-                            child: new Text(
-                              "Sign In",
-                            ),
-                          ),
-                        ],
-                      )
+                      MyRaisedButtons(),
                     ],
                   ),
                 ),
