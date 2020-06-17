@@ -17,11 +17,11 @@ class EmailInput extends StatelessWidget {
         ),
         prefixIcon: Icon(
           Icons.email,
-          color: Colors.blue[400],
+          color: Colors.teal[500],
         ),
         filled: true,
         fillColor: Colors.grey[300],
-        hintText: 'Username',
+        hintText: 'Email',
         contentPadding:
             const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
         focusedBorder: OutlineInputBorder(

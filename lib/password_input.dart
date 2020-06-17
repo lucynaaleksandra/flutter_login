@@ -7,7 +7,7 @@ class PasswordInput extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: Icon(
           Icons.lock,
-          color: Colors.blue[400],
+          color: Colors.teal[500],
         ),
         hintText: 'Password',
         enabledBorder: new OutlineInputBorder(

@@ -12,11 +12,11 @@ class _FormCheckboxState extends State<FormCheckbox> {
     return CheckboxListTile(
       // value: null,
       // checkColor: Colors.red[600],
-      activeColor: Colors.blue[400],
+      activeColor: Colors.teal[500],
       value: timeDilation != 1.0,
       onChanged: (bool value) {
         setState(() {
-          timeDilation = value ? 10.0 : 1.0;
+          timeDilation = value ? 5.0 : 1.0;
         });
       },
       title: Text(

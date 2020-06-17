@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Heading extends StatelessWidget {
+class SignInHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Text(
-      'Login App',
+      'Sign In',
       style: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 30.0,

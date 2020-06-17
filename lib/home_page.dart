@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/scheduler.dart';
-import './raised_button.dart';
+// import './sign_in_button.dart';
+// import './sign_up_button.dart';
 import './email_input.dart';
 import './password_input.dart';
 import './heading.dart';
 import './checkbox.dart';
+import './forgot_password.dart';
+// import './sign_up_page.dart';
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return new MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       routes: <String, WidgetBuilder>{
+//         '/sign_up_page': (BuildContext context) => new SignUpPage()
+//       },
+//       home: new HomePage(),
+//     );
+//   }
+// }
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,27 +39,23 @@ class _HomePageState extends State<HomePage> {
 
       home: Scaffold(
         backgroundColor: Color(0xFFFFFFFF),
-        // border: OutlinedBorder(),
-        // borderSide: BorderSide(color: Colors.white),
         body: new Center(
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
-              border: Border(
-                left: BorderSide(color: Colors.blue[400], width: 2.0),
-                top: BorderSide(color: Colors.blue[400], width: 2.0),
-                right: BorderSide(color: Colors.blue[400], width: 2.0),
-                bottom: BorderSide(color: Colors.blue[400], width: 2.0),
+              border: Border.all(
+                color: Colors.teal[500],
+                width: 2,
               ),
             ),
             // padding: const EdgeInsets.symmetric(
             //   horizontal: 60,
             // ),
             margin: EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 60,
+              horizontal: 50,
+              vertical: 70,
             ),
-            width: 500,
+            // width: double.infinity,
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -52,31 +64,95 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 50,
                     vertical: 50,
                   ),
-                  decoration: BoxDecoration(
-                      // color: Color(0xFFd0f2eb),
-                      // color: Color(0xFFF0F0F0),
-                      ),
                   child: new Column(
                     children: [
-                      Heading(),
-                      SizedBox(height: 50),
                       EmailInput(),
                       SizedBox(height: 20),
                       PasswordInput(),
                       FormCheckbox(),
-                      Text(
-                        'Forgot your password?',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16.0,
-                          fontFamily: 'Roboto',
-                          color: Colors.grey[600],
+                      ForgotPassword(),
+                      SizedBox(height: 50),
+                      // SignInButton(),
+                      // SizedBox(width: 20),
+                      // SignUpButton(),
+                      // SizedBox(height: 20),
+                      Container(
+                        height: 40,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20),
+                          shadowColor: Colors.teal[500],
+                          color: Colors.teal[200],
+                          elevation: 7,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Center(
+                              child: Text(
+                                "LOGIN",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                      SizedBox(height: 50),
-                      MyRaisedButtons(),
+                      SizedBox(height: 20),
+                      Container(
+                        height: 40,
+                        color: Colors.transparent,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.teal,
+                              style: BorderStyle.solid,
+                              width: 1,
+                            ),
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              // Center(
+                              //   child: ImageIcon(
+                              //     AssetImage('assets/facebook.png'),
+                              //   ),
+                              // ),
+                              Center(
+                                child: Text(
+                                  'Login with Facebook',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
+                ),
+                SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('New to Spotify?'),
+                    SizedBox(width: 5),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/sign_up_page');
+                      },
+                      child: Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Colors.teal,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
