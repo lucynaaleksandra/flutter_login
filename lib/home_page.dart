@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/scheduler.dart';
-// import './sign_in_button.dart';
-// import './sign_up_button.dart';
 import './email_input.dart';
 import './password_input.dart';
 import './checkbox.dart';
 import './forgot_password.dart';
 import './sign_in_heading.dart';
 import './fb_button.dart';
+// import './register.dart';
 import './login_button.dart';
 
 // class MyApp extends StatelessWidget {
@@ -49,9 +48,6 @@ class _HomePageState extends State<HomePage> {
                 width: 2,
               ),
             ),
-            // padding: const EdgeInsets.symmetric(
-            //   horizontal: 60,
-            // ),
             margin: EdgeInsets.symmetric(
               horizontal: 50,
               vertical: 70,
@@ -75,10 +71,6 @@ class _HomePageState extends State<HomePage> {
                       FormCheckbox(),
                       ForgotPassword(),
                       SizedBox(height: 50),
-                      // SignInButton(),
-                      // SizedBox(width: 20),
-                      // SignUpButton(),
-                      // SizedBox(height: 20),
                       LoginButton(),
                       SizedBox(height: 20),
                       FacebookButton(),
@@ -90,7 +82,12 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('New to Spotify?'),
+                    Text(
+                      'New to Spotify?',
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                      ),
+                    ),
                     SizedBox(width: 5),
                     InkWell(
                       onTap: () {

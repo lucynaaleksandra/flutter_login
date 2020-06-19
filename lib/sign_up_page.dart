@@ -23,18 +23,14 @@ class _SignUpPageState extends State<SignUpPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
               border: Border.all(
-                color: Colors.blue[400],
+                color: Colors.teal[500],
                 width: 2,
               ),
             ),
-            // padding: const EdgeInsets.symmetric(
-            //   horizontal: 60,
-            // ),
             margin: EdgeInsets.symmetric(
               horizontal: 50,
               vertical: 70,
             ),
-            // width: double.infinity,
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
