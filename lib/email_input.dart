@@ -4,6 +4,9 @@ class EmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new TextField(
+      style: new TextStyle(
+        fontSize: 14,
+      ),
       decoration: InputDecoration(
         enabledBorder: new OutlineInputBorder(
           borderSide: new BorderSide(
@@ -15,15 +18,18 @@ class EmailInput extends StatelessWidget {
           //   Radius.circular(80.0),
           // ),
         ),
-        prefixIcon: Icon(
-          Icons.email,
-          color: Colors.teal[500],
+        prefixIcon: new SizedBox(
+          height: 1,
+          child: Icon(
+            Icons.email,
+            color: Colors.teal[500],
+          ),
         ),
         filled: true,
         fillColor: Colors.grey[300],
         hintText: 'Email',
         contentPadding:
-            const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
+            const EdgeInsets.only(left: 10.0, bottom: 3.0, top: 3.0),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(25.7),

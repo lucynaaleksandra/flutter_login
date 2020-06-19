@@ -49,6 +49,7 @@ class SignInButton extends StatelessWidget {
                   'Sign In',
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontSize: 15,
                     color: Colors.white,
                   ),
                 ),

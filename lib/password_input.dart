@@ -4,6 +4,9 @@ class PasswordInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new TextField(
+      style: new TextStyle(
+        fontSize: 14,
+      ),
       decoration: InputDecoration(
         prefixIcon: Icon(
           Icons.lock,
@@ -23,7 +26,7 @@ class PasswordInput extends StatelessWidget {
         filled: true,
         fillColor: Colors.grey[300],
         contentPadding:
-            const EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
+            const EdgeInsets.only(left: 10.0, bottom: 3.0, top: 3.0),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(25.7),

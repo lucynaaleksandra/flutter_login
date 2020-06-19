@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/scheduler.dart';
-import './sign_up_button.dart';
+import './sign_up_heading.dart';
 import './email_input.dart';
 import './password_input.dart';
-import './sign_up_heading.dart';
 import './checkbox.dart';
-import './forgot_password.dart';
-// import './sign_up.dart';
-// import './sign_in_page.dart'
+// import './member.dart';
+import './sign_up_button.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -51,13 +49,38 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(height: 50),
                       EmailInput(),
                       SizedBox(height: 20),
-                      EmailInput(),
+                      PasswordInput(),
                       SizedBox(height: 20),
                       PasswordInput(),
                       FormCheckbox(),
-                      ForgotPassword(),
                       SizedBox(height: 50),
                       SignUpButton(),
+                      SizedBox(height: 50),
+                      // AlreadyMember(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Already a',
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/home_page');
+                            },
+                            child: Text(
+                              'Member',
+                              style: TextStyle(
+                                  color: Colors.teal,
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

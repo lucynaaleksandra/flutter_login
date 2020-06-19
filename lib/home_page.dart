@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 // import './sign_up_button.dart';
 import './email_input.dart';
 import './password_input.dart';
-import './heading.dart';
 import './checkbox.dart';
 import './forgot_password.dart';
-// import './sign_up_page.dart';
+import './sign_in_heading.dart';
+import './fb_button.dart';
+import './login_button.dart';
 
 // class MyApp extends StatelessWidget {
 //   @override
@@ -66,6 +67,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: new Column(
                     children: [
+                      SignInHeading(),
+                      SizedBox(height: 50),
                       EmailInput(),
                       SizedBox(height: 20),
                       PasswordInput(),
@@ -76,65 +79,14 @@ class _HomePageState extends State<HomePage> {
                       // SizedBox(width: 20),
                       // SignUpButton(),
                       // SizedBox(height: 20),
-                      Container(
-                        height: 40,
-                        child: Material(
-                          borderRadius: BorderRadius.circular(20),
-                          shadowColor: Colors.teal[500],
-                          color: Colors.teal[200],
-                          elevation: 7,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Center(
-                              child: Text(
-                                "LOGIN",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      LoginButton(),
                       SizedBox(height: 20),
-                      Container(
-                        height: 40,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.teal,
-                              style: BorderStyle.solid,
-                              width: 1,
-                            ),
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              // Center(
-                              //   child: ImageIcon(
-                              //     AssetImage('assets/facebook.png'),
-                              //   ),
-                              // ),
-                              Center(
-                                child: Text(
-                                  'Login with Facebook',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      FacebookButton(),
                     ],
                   ),
                 ),
                 SizedBox(height: 15),
+                // RegisterUser(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
