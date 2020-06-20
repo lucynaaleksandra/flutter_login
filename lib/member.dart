@@ -18,7 +18,7 @@ class AlreadyMember extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'Already a',
+            'Already a Member?',
             style: TextStyle(
               color: Colors.grey[600],
             ),
@@ -29,7 +29,7 @@ class AlreadyMember extends StatelessWidget {
               Navigator.of(context).pushNamed('/home_page');
             },
             child: Text(
-              'Member',
+              'Login',
               style: TextStyle(
                   color: Colors.teal,
                   fontWeight: FontWeight.bold,

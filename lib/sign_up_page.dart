@@ -57,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            'Already a',
+                            'Already a Member?',
                             style: TextStyle(
                               color: Colors.grey[600],
                             ),
@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               Navigator.of(context).pushNamed('/home_page');
                             },
                             child: Text(
-                              'Member',
+                              'Login',
                               style: TextStyle(
                                   color: Colors.teal,
                                   fontWeight: FontWeight.bold,

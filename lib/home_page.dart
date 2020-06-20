@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'New to Spotify?',
+                      'New to Lucify?',
                       style: TextStyle(
                         color: Colors.grey[600],
                       ),
