@@ -65,7 +65,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           SizedBox(width: 5),
                           InkWell(
                             onTap: () {
-                              Navigator.of(context).pushNamed('/home_page');
+                              Navigator.of(context).pushNamed('/sign_in');
                             },
                             child: Text(
                               'Login',

@@ -15,7 +15,7 @@ class RegisterUser extends StatelessWidget {
         SizedBox(width: 5),
         InkWell(
           onTap: () {
-            Navigator.of(context).pushNamed('/sign_up_page');
+            Navigator.of(context).pushNamed('/sign_up');
           },
           child: Text(
             'Register',

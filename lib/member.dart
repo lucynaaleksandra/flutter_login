@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import './home_page.dart';
+import './sign_in_page.dart';
 
 class AlreadyMember extends StatelessWidget {
   void selectHomePage(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(builder: (_) {
-        return HomePage();
+        return SignInPage();
       }),
     );
   }
@@ -26,7 +26,7 @@ class AlreadyMember extends StatelessWidget {
           SizedBox(width: 5),
           InkWell(
             onTap: () {
-              Navigator.of(context).pushNamed('/home_page');
+              Navigator.of(context).pushNamed('/sign_in');
             },
             child: Text(
               'Login',
