@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './sign_in_page.dart';
 
 class AlreadyMember extends StatelessWidget {
-  void selectHomePage(BuildContext ctx) {
+  void selectSignInPage(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(builder: (_) {
         return SignInPage();
@@ -13,7 +13,7 @@ class AlreadyMember extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new InkWell(
-      onTap: () => selectHomePage(context),
+      onTap: () => selectSignInPage(context),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
