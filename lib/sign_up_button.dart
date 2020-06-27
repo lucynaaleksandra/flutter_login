@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_login/sign_in_page.dart';
 import './home_page.dart';
 
 class SignUpButton extends StatelessWidget {
@@ -26,25 +25,23 @@ class SignUpButton extends StatelessWidget {
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onPressed: () {
-                Navigator.of(context).pushNamed('/home_page');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
               },
               child: Material(
                 borderRadius: BorderRadius.circular(30),
                 shadowColor: Colors.teal[500],
                 color: Colors.teal[200],
                 elevation: 20,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushNamed('/home_page');
-                  },
-                  child: Center(
-                    child: Text(
-                      "SIGN UP",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                child: Center(
+                  child: Text(
+                    "SIGN UP",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
