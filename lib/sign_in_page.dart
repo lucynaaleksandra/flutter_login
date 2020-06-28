@@ -5,7 +5,7 @@ import './password_input.dart';
 import './checkbox.dart';
 import './forgot_password.dart';
 import './sign_in_heading.dart';
-import './fb_button.dart';
+import './google_button.dart';
 // import './register.dart';
 import './login_button.dart';
 
@@ -60,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
                       SizedBox(height: 50),
                       LoginButton(),
                       SizedBox(height: 20),
-                      FacebookButton(),
+                      GoogleButton(),
                     ],
                   ),
                 ),

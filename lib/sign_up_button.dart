@@ -37,7 +37,7 @@ class SignUpButton extends StatelessWidget {
                 elevation: 20,
                 child: Center(
                   child: Text(
-                    "SIGN UP",
+                    "Sign Up".toUpperCase(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,

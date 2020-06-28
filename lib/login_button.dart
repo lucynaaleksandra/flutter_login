@@ -28,7 +28,7 @@ class LoginButton extends StatelessWidget {
             },
             child: Center(
               child: Text(
-                "LOGIN",
+                "Login".toUpperCase(),
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
