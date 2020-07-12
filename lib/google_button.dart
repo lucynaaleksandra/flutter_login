@@ -9,10 +9,10 @@ class GoogleButton extends StatelessWidget {
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(
-            color: Colors.teal[200],
-            width: 2,
-          ),
+          // side: BorderSide(
+          //   color: Colors.white,
+          //   width: 2,
+          // ),
         ),
         // Opacity(
         //   opacity: .5,

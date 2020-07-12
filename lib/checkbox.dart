@@ -10,6 +10,7 @@ class _FormCheckboxState extends State<FormCheckbox> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 450,
       color: Colors.white,
       child: CheckboxListTile(
         // value: null,

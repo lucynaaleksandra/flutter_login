@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import './home_page.dart';
 
-class LoginButton extends StatelessWidget {
+class LoginButton extends StatefulWidget {
+  @override
+  LoginButtonState createState() => LoginButtonState();
+}
+
+class LoginButtonState extends State<LoginButton> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  // bool _autoValidate = false;
+
+  // LoginButtonState(this._autoValidate);
+
   void selectHomePage(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(builder: (_) {
@@ -10,6 +20,33 @@ class LoginButton extends StatelessWidget {
     );
   }
 
+  void _validateInputs() {
+    final form = _formKey.currentState;
+    // Text forms was validated.
+    form.validate()
+        ? Scaffold.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Processing Data'),
+            ),
+          )
+        : Scaffold.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Submitted SSuccessfully!'),
+            ),
+            // setState(() => _autoValidate = true)
+          );
+    form.save();
+  }
+
+  // if (_formKey.currentState.validate()) {
+  //   // If the form is valid, display a Snackbar.
+  //   Scaffold.of(context)
+  //       .showSnackBar(SnackBar(content: Text('Processing Data')));
+  // } else {
+  //   setState(() => _autoValidate = true);
+  // }
+// }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,10 +54,10 @@ class LoginButton extends StatelessWidget {
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(
-            color: Colors.teal[400],
-            width: 2,
-          ),
+          // side: BorderSide(
+          //   color: Colors.teal[400],
+          //   width: 2,
+          // ),
         ),
         hoverColor: Colors.teal[500],
         color: Colors.teal[400],
@@ -28,6 +65,24 @@ class LoginButton extends StatelessWidget {
         animationDuration: Duration(milliseconds: 500),
         elevation: 5,
         splashColor: Colors.teal[300],
+        // onPressed: _validateInputs,
+
+        // onPressed: () {
+        //   final form = _formKey.currentState.validate()
+        //   ? Scaffold.of(context).showSnackBar(
+        //       SnackBar(
+        //         content: Text('Processing Data'),
+        //       ),
+        //     ) : Scaffold.of(context).showSnackBar(
+        //       SnackBar(
+        //         content: Text('Successsfully submitted'),
+        //       ),
+        //       // setState(() => _autoValidate = true;
+        //     );
+
+        //     form.save();
+        //   },
+
         onPressed: () {
           Navigator.push(
             context,
@@ -51,33 +106,34 @@ class LoginButton extends StatelessWidget {
         ),
       ),
     );
-    // return InkWell(
-    //   onTap: () => selectHomePage(context),
-    //   child: Container(
-    //     height: 48,
-    //     width: 330,
-    //     child: Material(
-    //       borderRadius: BorderRadius.circular(30),
-    //       shadowColor: Colors.teal[500],
-    //       color: Colors.teal[200],
-    //       elevation: 7,
-    //       child: GestureDetector(
-    //         onTap: () {
-    //           Navigator.of(context).pushNamed('/home_page');
-    //         },
-    //         child: Center(
-    //           child: Text(
-    //             "Login".toUpperCase(),
-    //             style: TextStyle(
-    //               color: Colors.white,
-    //               fontSize: 15,
-    //               fontWeight: FontWeight.bold,
-    //             ),
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 }
+
+// return InkWell(
+//   onTap: () => selectHomePage(context),
+//   child: Container(
+//     height: 48,
+//     width: 330,
+//     child: Material(
+//       borderRadius: BorderRadius.circular(30),
+//       shadowColor: Colors.teal[500],
+//       color: Colors.teal[200],
+//       elevation: 7,
+//       child: GestureDetector(
+//         onTap: () {
+//           Navigator.of(context).pushNamed('/home_page');
+//         },
+//         child: Center(
+//           child: Text(
+//             "Login".toUpperCase(),
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 15,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//         ),
+//       ),
+//     ),
+//   ),
+// );

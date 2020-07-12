@@ -15,6 +15,12 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+  bool _autoValidate = false;
+
+  // _SignInPageState(this._autoValidate);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,14 +46,16 @@ class _SignInPageState extends State<SignInPage> {
               vertical: 70,
             ),
             // width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 50,
+              vertical: 50,
+            ),
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 50,
-                  ),
+                new Form(
+                  key: _formKey,
+                  autovalidate: _autoValidate,
                   child: new Column(
                     children: [
                       SignInHeading(),

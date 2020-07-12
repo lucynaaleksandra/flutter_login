@@ -18,10 +18,10 @@ class SignUpButton extends StatelessWidget {
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(
-            color: Colors.teal[300],
-            width: 2,
-          ),
+          // side: BorderSide(
+          //   color: Colors.teal[300],
+          //   width: 2,
+          // ),
         ),
         hoverColor: Colors.teal[500],
         color: Colors.teal[400],
